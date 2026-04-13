@@ -6,80 +6,123 @@
 <title>Naveen Vemula | Portfolio</title>
 
 <style>
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
-    background: #f4f4f4;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-header {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-nav a {
-    margin: 10px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #00adb5;
-}
-
-section {
-    padding: 40px;
-    text-align: center;
-}
-
-h2 {
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f5f7fa;
     color: #333;
 }
 
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header h1 {
+    font-size: 32px;
+}
+
+header p {
+    margin: 10px 0;
+    color: #ccc;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    margin: 0 12px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00e6e6;
+}
+
+/* SECTION */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+section:nth-child(even) {
+    background: #ffffff;
+}
+
+section:nth-child(odd) {
+    background: #eef2f7;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #2c5364;
+}
+
+/* CARD */
 .card {
     background: white;
-    margin: 15px auto;
+    margin: 20px auto;
     padding: 20px;
     width: 80%;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     transition: 0.3s;
 }
 
 .card:hover {
-    transform: scale(1.03);
+    transform: translateY(-5px);
 }
 
+/* SKILLS LIST */
 ul {
     list-style: none;
-    padding: 0;
+    max-width: 600px;
+    margin: auto;
 }
 
 li {
-    padding: 5px;
+    background: #fff;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
+/* BUTTON */
 button {
-    padding: 10px 20px;
-    background: #00adb5;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #00adb5, #007b83);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
 }
 
 button:hover {
-    background: #007b83;
+    transform: scale(1.05);
 }
 
+/* FOOTER */
 footer {
-    background: #222;
-    color: white;
+    background: #0f2027;
+    color: #ccc;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
 }
 </style>
 </head>
@@ -160,6 +203,7 @@ footer {
     <h2>Contact</h2>
     <p>Email: naveenv77963@gmail.com</p>
     <p>Phone: +91-8886562177</p>
+    <br>
     <button onclick="showMessage()">Hire Me</button>
 </section>
 
