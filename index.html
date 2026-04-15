@@ -10,210 +10,223 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #f5f7fa;
-    color: #333;
-}
-
-/* HEADER */
-header {
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: white;
-    text-align: center;
-    padding: 30px 20px;
-}
-
-header h1 {
-    font-size: 32px;
-}
-
-header p {
-    margin: 10px 0;
-    color: #ccc;
-}
-
-nav {
-    margin-top: 15px;
-}
-
-nav a {
-    margin: 0 12px;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
     color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.3s;
 }
 
-nav a:hover {
-    color: #00e6e6;
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 60px;
+    background: rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
 }
 
-/* SECTION */
+nav h2 {
+    color: #38bdf8;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    padding: 60px;
+}
+
+.hero img {
+    width: 250px;
+    border-radius: 50%;
+    margin-right: 40px;
+    border: 4px solid #38bdf8;
+}
+
+.hero h1 {
+    font-size: 42px;
+}
+
+.hero h3 {
+    color: #38bdf8;
+    margin: 10px 0;
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background: #38bdf8;
+    color: #000;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Sections */
 section {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-section:nth-child(even) {
-    background: #ffffff;
-}
-
-section:nth-child(odd) {
-    background: #eef2f7;
+    padding: 50px 60px;
 }
 
 h2 {
+    color: #38bdf8;
     margin-bottom: 20px;
-    font-size: 28px;
-    color: #2c5364;
 }
 
-/* CARD */
 .card {
-    background: white;
-    margin: 20px auto;
+    background: #1e293b;
     padding: 20px;
-    width: 80%;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: 0.3s;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
-.card:hover {
-    transform: translateY(-5px);
-}
-
-/* SKILLS LIST */
 ul {
-    list-style: none;
-    max-width: 600px;
-    margin: auto;
+    margin-left: 20px;
 }
 
-li {
-    background: #fff;
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-/* BUTTON */
-button {
-    padding: 12px 25px;
-    background: linear-gradient(135deg, #00adb5, #007b83);
-    color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: 0.3s;
-}
-
-button:hover {
-    transform: scale(1.05);
-}
-
-/* FOOTER */
+/* Footer */
 footer {
-    background: #0f2027;
-    color: #ccc;
     text-align: center;
-    padding: 15px;
+    padding: 20px;
+    background: #020617;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Naveen Vemula</h1>
-    <p>Senior Software Engineer</p>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+<!-- Navbar -->
+<nav>
+    <h2>Naveen Vemula</h2>
+    <ul>
+        <li onclick="scrollToSection('about')">About</li>
+        <li onclick="scrollToSection('skills')">Skills</li>
+        <li onclick="scrollToSection('projects')">Projects</li>
+        <li onclick="scrollToSection('contact')">Contact</li>
+    </ul>
+</nav>
 
+<!-- Hero Section -->
+<div class="hero">
+    <img src="https://via.placeholder.com/250" alt="profile">
+    <div>
+        <h1>Naveen Vemula</h1>
+        <h3>Java Fullstack Developer</h3>
+        <p>Email: naveenv77963@gmail.com | Phone: +91-8886562177</p>
+        <button class="btn" onclick="scrollToSection('contact')">Contact Me</button>
+    </div>
+</div>
+
+<!-- About -->
 <section id="about">
-    <h2>About Me</h2>
-    <p>
-        4+ years of IT experience in Java/J2EE, Spring Boot, Microservices, and AWS.
-        Strong expertise in building scalable enterprise applications and REST APIs.
-    </p>
+    <h2>Career Objective</h2>
+    <div class="card">
+        <p>To secure a challenge in position where I can effectively contribute my skills as software professional, possessing competent technical skills.</p>
+    </div>
+
+    <h2>Professional Summary</h2>
+    <div class="card">
+        <ul>
+            <li>4.6 years of IT experience in Java/J2EE, Spring, Hibernate</li>
+            <li>Strong OOP concepts</li>
+            <li>Experience in Core Java, JDBC, Servlets, JSP, Spring Boot, REST API, Angular 8</li>
+            <li>Hands-on AWS Cloud</li>
+            <li>Experience with Design Patterns (MVC, DAO, DTO, Singleton)</li>
+            <li>Experience with MySQL & MSSQL</li>
+            <li>Strong analytical and problem-solving skills</li>
+        </ul>
+    </div>
 </section>
 
+<!-- Skills -->
 <section id="skills">
     <h2>Technical Skills</h2>
-    <ul>
-        <li>Java 8, JDBC, Servlets, JSP</li>
-        <li>Spring, Spring Boot, Hibernate</li>
-        <li>Microservices, REST API, SOAP</li>
-        <li>Angular 8, HTML, CSS, JavaScript</li>
-        <li>AWS, Kubernetes, Jenkins</li>
-        <li>MySQL, MSSQL</li>
-    </ul>
+    <div class="card">
+        <ul>
+            <li>Java 8</li>
+            <li>Spring, Spring Boot, Hibernate</li>
+            <li>Angular, HTML, CSS, JavaScript</li>
+            <li>Microservices, REST & SOAP</li>
+            <li>MySQL, MSSQL</li>
+            <li>Tomcat, WebLogic</li>
+            <li>AWS Cloud</li>
+        </ul>
+    </div>
 </section>
 
-<section id="experience">
+<!-- Experience -->
+<section>
     <h2>Professional Experience</h2>
-
     <div class="card">
-        <h3>Senior Software Engineer</h3>
-        <p>Happiest Minds Technologies (May 2024 - Present)</p>
-    </div>
-
-    <div class="card">
-        <h3>Software Engineer</h3>
-        <p>Foray Software Pvt Ltd (Jul 2022 - Nov 2023)</p>
-    </div>
-
-    <div class="card">
-        <h3>Software Engineer</h3>
-        <p>CCG Technologies (Oct 2020 - Jun 2022)</p>
+        <ul>
+            <li>Senior Software Engineer - Happiest Minds (May 2024 - Present)</li>
+            <li>Software Engineer - Foray Software (2022 - 2023)</li>
+            <li>Software Engineer - CCG Technologies (2020 - 2022)</li>
+        </ul>
     </div>
 </section>
 
+<!-- Projects -->
 <section id="projects">
     <h2>Projects</h2>
 
     <div class="card">
         <h3>Fisdap</h3>
-        <p>Healthcare education platform with analytics and reporting.</p>
+        <p>Healthcare education platform for tracking student performance.</p>
     </div>
 
     <div class="card">
         <h3>Health Insurance Plans</h3>
-        <p>Insurance marketplace with plan comparison and REST/SOAP services.</p>
+        <p>Marketplace for comparing and buying insurance plans.</p>
     </div>
 
     <div class="card">
         <h3>Sabre Travels</h3>
-        <p>Global travel booking and distribution system.</p>
+        <p>Global travel marketplace for booking and analytics.</p>
+    </div>
+
+</section>
+
+<!-- Education -->
+<section>
+    <h2>Academic Details</h2>
+    <div class="card">
+        <p>B.Tech from JNTU University</p>
     </div>
 </section>
 
+<!-- Contact -->
 <section id="contact">
     <h2>Contact</h2>
-    <p>Email: naveenv77963@gmail.com</p>
-    <p>Phone: +91-8886562177</p>
-    <br>
-    <button onclick="showMessage()">Hire Me</button>
+    <div class="card">
+        <p>Email: naveenv77963@gmail.com</p>
+        <p>Phone: +91-8886562177</p>
+    </div>
 </section>
 
+<!-- Footer -->
 <footer>
-    <p>© 2026 Naveen Vemula</p>
+    <p>© 2026 Naveen Vemula | Portfolio</p>
 </footer>
 
 <script>
-function showMessage() {
-    alert("Thanks for reaching out! Email me at naveenv77963@gmail.com");
+function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({
+        behavior: 'smooth'
+    });
 }
 </script>
 
