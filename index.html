@@ -52,9 +52,6 @@ nav ul li {
     border: 4px solid #38bdf8;
 }
 
-.hero h1 { font-size: 42px; }
-.hero h3 { color: #38bdf8; }
-
 .btn {
     margin-top: 15px;
     padding: 10px 20px;
@@ -65,13 +62,11 @@ nav ul li {
 }
 
 /* Sections */
-section {
-    padding: 50px 60px;
-}
+section { padding: 50px 60px; }
 
 h2 {
     color: #38bdf8;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .card {
@@ -88,7 +83,6 @@ h2 {
     color: black;
     padding: 10px;
     border-radius: 5px;
-    margin-bottom: 10px;
 }
 
 .dropdown-content {
@@ -96,7 +90,47 @@ h2 {
     margin-top: 10px;
 }
 
-ul { margin-left: 20px; }
+/* Carousel */
+.carousel {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    animation: scroll 20s linear infinite;
+}
+
+.carousel:hover .carousel-track {
+    animation-play-state: paused;
+}
+
+.company-card {
+    min-width: 250px;
+    margin: 10px;
+    background: #020617;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+.company-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.company-card a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
 
 /* Footer */
 footer {
@@ -114,17 +148,14 @@ footer {
     <h2>Naveen Vemula</h2>
     <ul>
         <li onclick="scrollToSection('about')">About</li>
-        <li onclick="scrollToSection('skills')">Skills</li>
-        <li onclick="scrollToSection('experience')">Experience</li>
+        <li onclick="scrollToSection('companies')">Companies</li>
         <li onclick="scrollToSection('contact')">Contact</li>
     </ul>
 </nav>
 
 <!-- Hero -->
 <div class="hero">
-    <!-- Cartoon Image from Google -->
-    <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="cartoon profile">
-    
+    <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png">
     <div>
         <h1>Naveen Vemula</h1>
         <h3>Java Fullstack Developer</h3>
@@ -138,61 +169,74 @@ footer {
 <section id="about">
     <h2>Career Objective</h2>
     <div class="card">
-        <p>To secure a challenge in position where I can effectively contribute my skills as software professional.</p>
+        <p>To secure a challenge in position where I can contribute my skills effectively.</p>
     </div>
 </section>
 
-<!-- Skills -->
-<section id="skills">
-    <h2>Technical Skills</h2>
-    <div class="card">
-        <ul>
-            <li>Java 8, Spring Boot, Hibernate</li>
-            <li>Angular, HTML, CSS, JavaScript</li>
-            <li>REST API, Microservices</li>
-            <li>AWS Cloud</li>
-            <li>MySQL, MSSQL</li>
-        </ul>
-    </div>
-</section>
-
-<!-- Experience with Dropdown -->
-<section id="experience">
-    <h2>Professional Experience</h2>
-
-    <div class="dropdown" onclick="toggleDropdown()">
-        Click to View Experience ▼
-    </div>
-
-    <div class="dropdown-content" id="experienceContent">
+<!-- Experience Dropdown -->
+<section>
+    <h2>Experience</h2>
+    <div class="dropdown" onclick="toggleDropdown()">View Experience ▼</div>
+    <div class="dropdown-content" id="exp">
         <div class="card">
             <ul>
-                <li><b>Senior Software Engineer</b> - Happiest Minds (May 2024 - Present)</li>
-                <li><b>Software Engineer</b> - Foray Software (2022 - 2023)</li>
-                <li><b>Software Engineer</b> - CCG Technologies (2020 - 2022)</li>
+                <li>Senior Software Engineer - Happiest Minds (2024 - Present)</li>
+                <li>Software Engineer - Foray Software (2022 - 2023)</li>
+                <li>Software Engineer - CCG Technologies (2020 - 2022)</li>
             </ul>
         </div>
     </div>
 </section>
 
-<!-- Projects -->
-<section>
-    <h2>Projects</h2>
+<!-- Company Carousel -->
+<section id="companies">
+    <h2>Companies Worked With</h2>
 
-    <div class="card">
-        <h3>Fisdap</h3>
-        <p>Healthcare education tracking system.</p>
+    <div class="carousel">
+        <div class="carousel-track">
+
+            <!-- Happiest Minds -->
+            <div class="company-card">
+                <img src="https://logo.clearbit.com/happiestminds.com">
+                <h3>Happiest Minds</h3>
+                <p>Senior Software Engineer</p>
+                <a href="https://www.happiestminds.com" target="_blank">Visit Website</a>
+            </div>
+
+            <!-- Foray Software -->
+            <div class="company-card">
+                <img src="https://logo.clearbit.com/foraysoft.com">
+                <h3>Foray Software</h3>
+                <p>Software Engineer</p>
+                <a href="https://foraysoft.com" target="_blank">Visit Website</a>
+            </div>
+
+            <!-- CCG Technologies -->
+            <div class="company-card">
+                <img src="https://logo.clearbit.com/ccgindia.com">
+                <h3>CCG Technologies</h3>
+                <p>Software Engineer</p>
+                <a href="https://www.ccgindia.com" target="_blank">Visit Website</a>
+            </div>
+
+            <!-- Duplicate for smooth loop -->
+            <div class="company-card">
+                <img src="https://logo.clearbit.com/happiestminds.com">
+                <h3>Happiest Minds</h3>
+                <p>Senior Software Engineer</p>
+                <a href="https://www.happiestminds.com" target="_blank">Visit Website</a>
+            </div>
+
+            <div class="company-card">
+                <img src="https://logo.clearbit.com/foraysoft.com">
+                <h3>Foray Software</h3>
+                <p>Software Engineer</p>
+                <a href="https://foraysoft.com" target="_blank">Visit Website</a>
+            </div>
+
+        </div>
     </div>
 
-    <div class="card">
-        <h3>Health Insurance Plans</h3>
-        <p>Insurance marketplace application.</p>
-    </div>
-
-    <div class="card">
-        <h3>Sabre Travels</h3>
-        <p>Global travel booking platform.</p>
-    </div>
 </section>
 
 <!-- Contact -->
@@ -204,21 +248,18 @@ footer {
     </div>
 </section>
 
-<!-- Footer -->
 <footer>
     <p>© 2026 Naveen Vemula</p>
 </footer>
 
 <script>
 function scrollToSection(id) {
-    document.getElementById(id).scrollIntoView({
-        behavior: 'smooth'
-    });
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
 }
 
 function toggleDropdown() {
-    let content = document.getElementById("experienceContent");
-    content.style.display = content.style.display === "block" ? "none" : "block";
+    let x = document.getElementById("exp");
+    x.style.display = x.style.display === "block" ? "none" : "block";
 }
 </script>
 
