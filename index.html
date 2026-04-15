@@ -23,14 +23,10 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 20px 60px;
-    background: rgba(0,0,0,0.3);
-    position: sticky;
-    top: 0;
+    background: rgba(0,0,0,0.4);
 }
 
-nav h2 {
-    color: #38bdf8;
-}
+nav h2 { color: #38bdf8; }
 
 nav ul {
     display: flex;
@@ -42,7 +38,7 @@ nav ul li {
     cursor: pointer;
 }
 
-/* Hero Section */
+/* Hero */
 .hero {
     display: flex;
     align-items: center;
@@ -50,29 +46,22 @@ nav ul li {
 }
 
 .hero img {
-    width: 250px;
+    width: 220px;
     border-radius: 50%;
     margin-right: 40px;
     border: 4px solid #38bdf8;
 }
 
-.hero h1 {
-    font-size: 42px;
-}
-
-.hero h3 {
-    color: #38bdf8;
-    margin: 10px 0;
-}
+.hero h1 { font-size: 42px; }
+.hero h3 { color: #38bdf8; }
 
 .btn {
-    margin-top: 20px;
+    margin-top: 15px;
     padding: 10px 20px;
-    border: none;
     background: #38bdf8;
-    color: #000;
-    cursor: pointer;
+    border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 /* Sections */
@@ -82,20 +71,32 @@ section {
 
 h2 {
     color: #38bdf8;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .card {
     background: #1e293b;
     padding: 20px;
-    margin-bottom: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    margin-bottom: 15px;
 }
 
-ul {
-    margin-left: 20px;
+/* Dropdown */
+.dropdown {
+    cursor: pointer;
+    background: #38bdf8;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
+
+.dropdown-content {
+    display: none;
+    margin-top: 10px;
+}
+
+ul { margin-left: 20px; }
 
 /* Footer */
 footer {
@@ -114,18 +115,21 @@ footer {
     <ul>
         <li onclick="scrollToSection('about')">About</li>
         <li onclick="scrollToSection('skills')">Skills</li>
-        <li onclick="scrollToSection('projects')">Projects</li>
+        <li onclick="scrollToSection('experience')">Experience</li>
         <li onclick="scrollToSection('contact')">Contact</li>
     </ul>
 </nav>
 
-<!-- Hero Section -->
+<!-- Hero -->
 <div class="hero">
-    <img src="https://via.placeholder.com/250" alt="profile">
+    <!-- Cartoon Image from Google -->
+    <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="cartoon profile">
+    
     <div>
         <h1>Naveen Vemula</h1>
         <h3>Java Fullstack Developer</h3>
-        <p>Email: naveenv77963@gmail.com | Phone: +91-8886562177</p>
+        <p>Email: naveenv77963@gmail.com</p>
+        <p>Phone: +91-8886562177</p>
         <button class="btn" onclick="scrollToSection('contact')">Contact Me</button>
     </div>
 </div>
@@ -134,20 +138,7 @@ footer {
 <section id="about">
     <h2>Career Objective</h2>
     <div class="card">
-        <p>To secure a challenge in position where I can effectively contribute my skills as software professional, possessing competent technical skills.</p>
-    </div>
-
-    <h2>Professional Summary</h2>
-    <div class="card">
-        <ul>
-            <li>4.6 years of IT experience in Java/J2EE, Spring, Hibernate</li>
-            <li>Strong OOP concepts</li>
-            <li>Experience in Core Java, JDBC, Servlets, JSP, Spring Boot, REST API, Angular 8</li>
-            <li>Hands-on AWS Cloud</li>
-            <li>Experience with Design Patterns (MVC, DAO, DTO, Singleton)</li>
-            <li>Experience with MySQL & MSSQL</li>
-            <li>Strong analytical and problem-solving skills</li>
-        </ul>
+        <p>To secure a challenge in position where I can effectively contribute my skills as software professional.</p>
     </div>
 </section>
 
@@ -156,55 +147,51 @@ footer {
     <h2>Technical Skills</h2>
     <div class="card">
         <ul>
-            <li>Java 8</li>
-            <li>Spring, Spring Boot, Hibernate</li>
+            <li>Java 8, Spring Boot, Hibernate</li>
             <li>Angular, HTML, CSS, JavaScript</li>
-            <li>Microservices, REST & SOAP</li>
-            <li>MySQL, MSSQL</li>
-            <li>Tomcat, WebLogic</li>
+            <li>REST API, Microservices</li>
             <li>AWS Cloud</li>
+            <li>MySQL, MSSQL</li>
         </ul>
     </div>
 </section>
 
-<!-- Experience -->
-<section>
+<!-- Experience with Dropdown -->
+<section id="experience">
     <h2>Professional Experience</h2>
-    <div class="card">
-        <ul>
-            <li>Senior Software Engineer - Happiest Minds (May 2024 - Present)</li>
-            <li>Software Engineer - Foray Software (2022 - 2023)</li>
-            <li>Software Engineer - CCG Technologies (2020 - 2022)</li>
-        </ul>
+
+    <div class="dropdown" onclick="toggleDropdown()">
+        Click to View Experience ▼
+    </div>
+
+    <div class="dropdown-content" id="experienceContent">
+        <div class="card">
+            <ul>
+                <li><b>Senior Software Engineer</b> - Happiest Minds (May 2024 - Present)</li>
+                <li><b>Software Engineer</b> - Foray Software (2022 - 2023)</li>
+                <li><b>Software Engineer</b> - CCG Technologies (2020 - 2022)</li>
+            </ul>
+        </div>
     </div>
 </section>
 
 <!-- Projects -->
-<section id="projects">
+<section>
     <h2>Projects</h2>
 
     <div class="card">
         <h3>Fisdap</h3>
-        <p>Healthcare education platform for tracking student performance.</p>
+        <p>Healthcare education tracking system.</p>
     </div>
 
     <div class="card">
         <h3>Health Insurance Plans</h3>
-        <p>Marketplace for comparing and buying insurance plans.</p>
+        <p>Insurance marketplace application.</p>
     </div>
 
     <div class="card">
         <h3>Sabre Travels</h3>
-        <p>Global travel marketplace for booking and analytics.</p>
-    </div>
-
-</section>
-
-<!-- Education -->
-<section>
-    <h2>Academic Details</h2>
-    <div class="card">
-        <p>B.Tech from JNTU University</p>
+        <p>Global travel booking platform.</p>
     </div>
 </section>
 
@@ -219,7 +206,7 @@ footer {
 
 <!-- Footer -->
 <footer>
-    <p>© 2026 Naveen Vemula | Portfolio</p>
+    <p>© 2026 Naveen Vemula</p>
 </footer>
 
 <script>
@@ -227,6 +214,11 @@ function scrollToSection(id) {
     document.getElementById(id).scrollIntoView({
         behavior: 'smooth'
     });
+}
+
+function toggleDropdown() {
+    let content = document.getElementById("experienceContent");
+    content.style.display = content.style.display === "block" ? "none" : "block";
 }
 </script>
 
